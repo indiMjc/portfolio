@@ -1,14 +1,14 @@
 //need to append to 'output' on home: div img
 
-axios
-    .get("https://api.nasa.gov/planetary/apod?api_key=LHhD6UH1gC3c1EJyebHbf3UBgaoOZBbH3loKthxz")
-    .then(response => {
-        console.log(response.data.url);
-        setBackground(response.data.url);
-    })
-    .catch(error => {
-        console.log("Data not returned", error);
-    });
+// axios
+//     .get("https://api.nasa.gov/planetary/apod?api_key=LHhD6UH1gC3c1EJyebHbf3UBgaoOZBbH3loKthxz")
+//     .then(response => {
+//         console.log(response.data.url);
+//         setBackground(response.data.url);
+//     })
+//     .catch(error => {
+//         console.log("Data not returned", error);
+//     });
 
 const root = document.querySelector("#root");
 

@@ -143,12 +143,13 @@ table {
   overflow: hidden;
   background: linear-gradient(
     -30deg,
-    #1ec4e9 0%,
-    #673ab7 50%,
+    #262626 0%,
+    #607d8b 50%,
     #262626 50%,
     #607d8b 100%
   );
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.75rem;
 }
 .button-container .span-parent .button-filter {
   height: 100%;
@@ -200,13 +201,13 @@ table {
   top: 0;
   left: 0;
   width: 0;
-  height: 1px;
+  height: 1.5px;
   background-color: #fff;
 }
 .button-container .span-parent span:nth-child(2) {
   top: 0;
   left: 0;
-  width: 1px;
+  width: 1.5px;
   height: 0;
   background-color: #fff;
 }
@@ -214,13 +215,13 @@ table {
   bottom: 0;
   right: 0;
   width: 0;
-  height: 1px;
+  height: 1.5px;
   background-color: #fff;
 }
 .button-container .span-parent span:nth-child(4) {
   bottom: 0;
   right: 0;
-  width: 1px;
+  width: 1.5px;
   height: 0;
   background-color: #fff;
 }
