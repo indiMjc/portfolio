@@ -20,8 +20,9 @@ function create(element) {
   return document.createElement(element);
 };
 
-function ButtonMaker(textContent) {
-
+function ButtonMaker(textContent, linkLocation) {
+  
+  const buttonLink = create("a");
   const buttonContainer = create("div");
   const stepParent = create("div");
   const spanOne = create("span");
@@ -31,13 +32,18 @@ function ButtonMaker(textContent) {
   const button = create("div");
   const text = create("div");
 
+  buttonLink.classList.add("button-link");
   buttonContainer.classList.add("button-container");
   stepParent.classList.add("span-parent");
   button.classList.add("button-filter");
 
+  buttonLink.href = linkLocation;
   text.textContent = textContent;
+  // buttonLink.textContent = textContent;
 
-  root.prepend(buttonContainer);
+
+  root.prepend(buttonLink);
+  buttonLink.appendChild(buttonContainer);
   buttonContainer.appendChild(stepParent);
   stepParent.appendChild(spanOne);
   stepParent.appendChild(spanTwo);
@@ -47,4 +53,4 @@ function ButtonMaker(textContent) {
   button.appendChild(text);
 };
 
-ButtonMaker("Test Button");
+ButtonMaker("Test Button", "http://www.facebook.com");
