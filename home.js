@@ -1,12 +1,12 @@
-axios
-    .get("https://api.nasa.gov/planetary/apod?api_key=LHhD6UH1gC3c1EJyebHbf3UBgaoOZBbH3loKthxz")
-    .then(response => {
-        console.log(response.data.url);
-        document.body.setAttribute("style", `background: url('${response.data.url}'); background-repeat: no-repeat; background-size: cover;`);
-    })
-    .catch(error => {
-        console.log("Data not returned", error);
-    });
+// axios
+//     .get("https://api.nasa.gov/planetary/apod?api_key=LHhD6UH1gC3c1EJyebHbf3UBgaoOZBbH3loKthxz")
+//     .then(response => {
+//         console.log(response.data.url);
+//         document.body.setAttribute("style", `background: url('${response.data.url}'); background-repeat: no-repeat; background-size: cover;`);
+//     })
+//     .catch(error => {
+//         console.log("Data not returned", error);
+//     });
 
 const root = document.querySelector("#root");
 
@@ -35,7 +35,7 @@ function ButtonMaker(textContent, linkLocation) {
   buttonLink.href = linkLocation;
   text.textContent = textContent;
 
-  root.prepend(buttonLink);
+  // root.prepend(buttonLink);
   buttonLink.appendChild(buttonContainer);
   buttonContainer.appendChild(stepParent);
   stepParent.appendChild(spanOne);
@@ -44,6 +44,16 @@ function ButtonMaker(textContent, linkLocation) {
   stepParent.appendChild(spanFour);
   stepParent.appendChild(button);
   button.appendChild(text);
+  
+  return buttonLink;
 };
 
-ButtonMaker("ENTER", "http://www.facebook.com");
+function SmallerButton(textContent, linkLocation, x, y) {
+  const newButton = ButtonMaker(textContent, linkLocation);
+  newButton.setAttribute("style", `transform: scale(${x}, ${y})`);
+  return newButton;
+}
+
+root.prepend(ButtonMaker("ENTER", "http://www.facebook.com"));
+
+root.prepend(SmallerButton("test", "http://www.facebook.com", 0.5, 0.5));
