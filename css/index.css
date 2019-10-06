@@ -127,11 +127,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-#root {
+body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+#root {
+  height: 7.2rem;
 }
 #root .button-link {
   display: flex;

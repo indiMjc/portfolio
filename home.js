@@ -2,17 +2,13 @@ axios
     .get("https://api.nasa.gov/planetary/apod?api_key=LHhD6UH1gC3c1EJyebHbf3UBgaoOZBbH3loKthxz")
     .then(response => {
         console.log(response.data.url);
-        setBackground(response.data.url);
+        document.body.setAttribute("style", `background: url('${response.data.url}'); background-repeat: no-repeat; background-size: cover;`);
     })
     .catch(error => {
         console.log("Data not returned", error);
     });
 
 const root = document.querySelector("#root");
-
-function setBackground(image) {
-    document.body.style.background = `url('${image}'`;
-};
 
 function create(element) {
   return document.createElement(element);
