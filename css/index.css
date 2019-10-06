@@ -129,6 +129,7 @@ table {
 }
 .page {
   min-height: 100vh;
+  max-height: 100vh;
 }
 .button-link {
   display: flex;
@@ -253,5 +254,5 @@ table {
   height: 5rem;
 }
 .nav-container .small-button {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }

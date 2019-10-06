@@ -3,6 +3,7 @@ axios
     .then(response => {
         console.log(response.data.url);
         const homePage = document.querySelector("#home");
+        homePage.style.height = "100vh";
         homePage.setAttribute("style", `background: url('${response.data.url}'); background-repeat: no-repeat; background-size: cover;`);
     })
     .catch(error => {
@@ -53,6 +54,7 @@ function SmallerButton(textContent, linkLocation, x, y) {
 
   const newButton = ButtonMaker(textContent, linkLocation);
   newButton.setAttribute("style", `transform: scale(${x}, ${y})`);
+  newButton.style.minWidth = "19rem";
   newButton.classList.add("small-button");
 
   return newButton;
