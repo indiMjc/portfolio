@@ -36,11 +36,10 @@ function ButtonMaker(textContent, linkLocation) {
   buttonContainer.classList.add("button-container");
   stepParent.classList.add("span-parent");
   button.classList.add("button-filter");
+  text.classList.add("button-text");
 
   buttonLink.href = linkLocation;
   text.textContent = textContent;
-  // buttonLink.textContent = textContent;
-
 
   root.prepend(buttonLink);
   buttonLink.appendChild(buttonContainer);
