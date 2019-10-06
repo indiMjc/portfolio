@@ -127,49 +127,42 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-#root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.page {
+  min-height: 100vh;
+  max-height: 100vh;
 }
-#root .button-link {
+.button-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content;
   text-decoration: none;
+  margin-top: 15%;
 }
-#root .button-link .button-container {
+.button-link .button-container {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 7.2rem;
 }
-#root .button-link .button-container .span-parent {
+.button-link .button-container .span-parent {
   position: relative;
   display: flex;
   align-items: center;
   height: 7.2rem;
   overflow: hidden;
-  background: linear-gradient(
-    -30deg,
-    #262626 0%,
-    #607d8b 50%,
-    #262626 50%,
-    #607d8b 100%
-  );
+  background: linear-gradient(-30deg, #262626 0%, #607d8b 50%, #262626 50%, #607d8b 100%);
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
   border-radius: 0.75rem;
 }
-#root .button-link .button-container .span-parent .button-filter {
+.button-link .button-container .span-parent .button-filter {
   height: 100%;
   display: flex;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.1);
 }
-#root .button-link .button-container .span-parent .button-filter .button-text {
+.button-link .button-container .span-parent .button-filter .button-text {
   border-top: 2rem solid transparent;
   border-bottom: 2rem solid transparent;
   border-right: 5rem solid transparent;
@@ -182,7 +175,7 @@ table {
   font-family: sans-serif;
   letter-spacing: 0.4rem;
 }
-#root .button-link .button-container .span-parent:before {
+.button-link .button-container .span-parent:before {
   content: "";
   position: absolute;
   top: 0;
@@ -191,7 +184,7 @@ table {
   height: 100%;
   background: rgba(255, 255, 255, 0.1);
 }
-#root .button-link .button-container .span-parent:after {
+.button-link .button-container .span-parent:after {
   content: "";
   position: absolute;
   top: 0;
@@ -202,55 +195,64 @@ table {
   transition: 0.4s;
   transition-delay: 0.2s;
 }
-#root .button-link .button-container .span-parent:hover:after {
+.button-link .button-container .span-parent:hover:after {
   left: 100%;
 }
-#root .button-link .button-container .span-parent span {
+.button-link .button-container .span-parent span {
   position: absolute;
   display: block;
   transition: 0.5s ease;
 }
-#root .button-link .button-container .span-parent span:nth-child(1) {
+.button-link .button-container .span-parent span:nth-child(1) {
   top: 0;
   left: 0;
   width: 0;
   height: 1.5px;
   background-color: #fff;
 }
-#root .button-link .button-container .span-parent span:nth-child(2) {
+.button-link .button-container .span-parent span:nth-child(2) {
   top: 0;
   left: 0;
   width: 1.5px;
   height: 0;
   background-color: #fff;
 }
-#root .button-link .button-container .span-parent span:nth-child(3) {
+.button-link .button-container .span-parent span:nth-child(3) {
   bottom: 0;
   right: 0;
   width: 0;
   height: 1.5px;
   background-color: #fff;
 }
-#root .button-link .button-container .span-parent span:nth-child(4) {
+.button-link .button-container .span-parent span:nth-child(4) {
   bottom: 0;
   right: 0;
   width: 1.5px;
   height: 0;
   background-color: #fff;
 }
-#root .button-link .button-container .span-parent:hover span:nth-child(1) {
+.button-link .button-container .span-parent:hover span:nth-child(1) {
   width: 100%;
   transform: translateX(100%);
 }
-#root .button-link .button-container .span-parent:hover span:nth-child(2) {
+.button-link .button-container .span-parent:hover span:nth-child(2) {
   height: 100%;
   transform: translateY(100%);
 }
-#root .button-link .button-container .span-parent:hover span:nth-child(3) {
+.button-link .button-container .span-parent:hover span:nth-child(3) {
   width: 100%;
   transform: translateX(-100%);
 }
-#root .button-link .button-container .span-parent:hover span:nth-child(4) {
+.button-link .button-container .span-parent:hover span:nth-child(4) {
   height: 100%;
   transform: translateY(-100%);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+}
+.nav-container .small-button {
+  margin-top: 2.5rem;
 }

@@ -1,24 +1,20 @@
-//need to append to 'output' on home: div img
-
-// axios
-//     .get("https://api.nasa.gov/planetary/apod?api_key=LHhD6UH1gC3c1EJyebHbf3UBgaoOZBbH3loKthxz")
-//     .then(response => {
-//         console.log(response.data.url);
-//         setBackground(response.data.url);
-//     })
-//     .catch(error => {
-//         console.log("Data not returned", error);
-//     });
-
-const root = document.querySelector("#root");
-
-function setBackground(image) {
-    document.body.style.background = `url('${image}'`;
-};
+axios
+    .get("https://api.nasa.gov/planetary/apod?api_key=LHhD6UH1gC3c1EJyebHbf3UBgaoOZBbH3loKthxz")
+    .then(response => {
+        console.log(response.data.url);
+        const homePage = document.querySelector("#home");
+        homePage.style.height = "100vh";
+        homePage.setAttribute("style", `background: url('${response.data.url}'); background-repeat: no-repeat; background-size: cover;`);
+    })
+    .catch(error => {
+        console.log("Data not returned", error);
+    });
 
 function create(element) {
   return document.createElement(element);
 };
+
+const root = document.querySelector("#root");
 
 function ButtonMaker(textContent, linkLocation) {
   
@@ -41,7 +37,7 @@ function ButtonMaker(textContent, linkLocation) {
   buttonLink.href = linkLocation;
   text.textContent = textContent;
 
-  root.prepend(buttonLink);
+  // root.prepend(buttonLink);
   buttonLink.appendChild(buttonContainer);
   buttonContainer.appendChild(stepParent);
   stepParent.appendChild(spanOne);
@@ -50,6 +46,20 @@ function ButtonMaker(textContent, linkLocation) {
   stepParent.appendChild(spanFour);
   stepParent.appendChild(button);
   button.appendChild(text);
+  
+  return buttonLink;
 };
 
-ButtonMaker("Test Button", "http://www.facebook.com");
+function SmallerButton(textContent, linkLocation, x, y) {
+
+  const newButton = ButtonMaker(textContent, linkLocation);
+  newButton.setAttribute("style", `transform: scale(${x}, ${y})`);
+  newButton.style.minWidth = "19rem";
+  newButton.classList.add("small-button");
+
+  return newButton;
+}
+
+// root.appendChild(ButtonMaker("PORTFOLIO", "http://www.facebook.com"));
+root.appendChild(ButtonMaker("Portfolio", "./projects/projects.html"));
+// root.prepend(SmallerButton("test", "http://www.facebook.com", 0.5, 0.5));
